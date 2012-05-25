@@ -1,0 +1,12 @@
+score    DL_KNOWN_MAILER        1.5
+score    DL_MALFORMED_FROM_1    1.5
+score    DL_MALFORMED_FROM_2    1.5
+score    DL_MALFORMED_FROM_3    1.5
+score    DL_FROM_EXCLAMACAO     0.4
+score    DL_QUESTION_SUBJ       0.1
+score    DL_PESO_KG             0.5
+score    DL_TMPSTR              4.0
+score    DL_USER_URI            0.2
+score    DL_LINK_UNSAFE         1.5
+score    DL_INTERNET_EMAIL      1.0
+score    DL_HTML_TITLE          1.5

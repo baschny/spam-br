@@ -1,0 +1,30 @@
+### START BR rules
+
+uri      BR_REDEBIZ             /redebiz\.com\.br/i
+describe BR_REDEBIZ             Redebiz.com.br
+
+uri      BR_CJB_URI             /\.cjb\.net/i
+describe BR_CJB_URI             Link para sites no cjb.net
+
+uri      BR_KITNET_URI          /\.kit\.net/i
+describe BR_KITNET_URI          Link para sites no kit.net
+
+uri      BR_FREEHOST_URI        /\.freesites\.com\.br|netfirms\.com/i
+describe BR_FREEHOST_URI        Link para sites de hospedagem gratis
+
+uri      BR_HPG_URI             /\.(?:hpg|ig)\.com\.br/i
+describe BR_HPG_URI             Link para sites no HPG
+
+uri      BR_ML_URI              /\.mercadoli[vb]re\.com/i
+describe BR_ML_URI              Link para produtos no Mercado Livre
+
+uri      BR_GLOBO_COM           /[^(?:webmail)]\.(?:rede){0,1}globo\.com/i
+describe BR_GLOBO_COM           Link para Globo.com
+
+uri      BR_WWW_SUAEMPRESA_URI  /\.(?:(?:sua\-*){0,1}empresa|voce)\.com/i
+describe BR_WWW_SUAEMPRESA_URI  www.suaempresa.com.br (e similares)
+
+uri      BR_SPAMMER_URI         /renda\-*extra|formulario|sexo|penis|gostosa|e\-*mail|mulheres|ninfeta|venda|ganhe|mala\-*direta|grampo|promo.{2}o|oportunidade|livre\-*se|divulg|respond|remov/i
+describe BR_SPAMMER_URI         Texto suspeito
+
+### EOF BR

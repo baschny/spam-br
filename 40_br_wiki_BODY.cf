@@ -1,0 +1,228 @@
+### START BR rules
+
+body     BR_MAILTO_KEYS         /mailto\:\S*(?:cadastro|curso|promo|remov|sexo|gostosa|oportunidade|renda)\S*\@(?:bol|ig)\.com\.br/i
+describe BR_MAILTO_KEYS         Mailto para um endereco suspeito
+
+body     BR_COPYRIGHT           /todos\s+os\s+direitos\s+reservados/i
+describe BR_COPYRIGHT           Todos os direitos reservados
+
+body     BR_MEPPS               /\bM[\.\s]*E[\.\s]*P[\.\s]*P[\.\s]*S[\.\s]*\b/i
+describe BR_MEPPS               MEPPS no email
+
+body     BR_DIVULGUE_SUA        /divulgue\s+(?:sua|seu)/i
+describe BR_DIVULGUE_SUA        Divulgue sua/seu
+
+body     BR_AUMENTE_PENIS       /aument[ae]\s+(?:seu){0,1}\s*p(?:e|к|К|&ecirc\;)nis/i
+describe BR_AUMENTE_PENIS       Fala sobre aumento de penis
+
+body     BR_PERDER_TEMPO        /perca\s+(?:mais){0,1}\s*tempo/i
+describe BR_PERDER_TEMPO        Fala sobre nao perder tempo
+
+body     BR_24_HORAS            /\b24\s*(?:horas|h|hr|hrs)\b/i
+describe BR_24_HORAS            24 Horas
+
+body     BR_SUA_EMPRESA         /\b(?:de|para)\s+sua\s+empresa\b/i
+describe BR_SUA_EMPRESA         Contem 'de/para sua empresa'
+
+body     BR_HOSPEDAGEM          /\bhospedagem\b/i
+describe BR_HOSPEDAGEM          Contem a palavra 'hospedagem'
+
+body     BR_NAO_RESPONDA        /\b(?:г|Г|a|\&atilde\;)o\s+responda\s+(?:esta\s+mensagem|este\s+e\-*mail)/i
+describe BR_NAO_RESPONDA        Fala para nao responder o e-mail
+
+body     BR_DESCULPE            /desculpe\s+o\s+(?:inc(?:o|ф|Ф|\&ocirc\;)modo|transtorno)/i
+describe BR_DESCULPE            Pede desculpas pelo incomodo/transtorno
+
+body     BR_CONSULTE            /\bconsulte\-*nos\b/i
+describe BR_CONSULTE            Consulte-nos!
+
+body     BR_ESPIONAGEM          /\b(?:espionagem|detetive)\b/i
+describe BR_ESPIONAGEM          Detetive ou Espionagem
+
+body     BR_DESPACHO            /Despachamos\s+para\s+todo\s+o\s+Brasil/i
+describe BR_DESPACHO            Despachamos para todo o Brasil
+
+body     BR_EMAIL_COUNT         /(?:[\d\.]{7,}|\d+\s*milh.{0,3}(?:es|o))\s+(?:de\s+)e\-*mail[\'s]{0,2}\b/i
+describe BR_EMAIL_COUNT         Provavelmente e' sobre venda de listas de e-mails
+
+body     BR_TELEMARKETING       /tele.{0,3}marketing/i
+describe BR_TELEMARKETING       Fala sobre 'Telemarketing'
+
+body     BR_TRABALHAR_CASA      /trabalh(?:ar|e)\s+(?:de|em)\s+casa\b/i
+describe BR_TRABALHAR_CASA      Fala sobre 'Trabalhar em Casa'
+
+body     BR_SAIBA_MAIS          /\bsaiba\s+mais/i
+describe BR_SAIBA_MAIS          Fala sobre 'e saiba mais'
+
+body     BR_IMPERDIVEL          /\bimperd(?:.{1,3}|\&iacute\;)vel\b/i
+describe BR_IMPERDIVEL          Fala sobre 'Imperdivel'
+
+body     BR_NEDSTAT             /nedstatbasic/i
+describe BR_NEDSTAT             Tracking do Nedstat
+
+body     BR_VISITE              /visite\s+nosso\s+site/i
+describe BR_VISITE              Fala sobre 'Visite nosso site'
+
+body     BR_APROVEITE           /\baproveitem?\s+(?:nossa|es[st]a)\s+promo/i
+describe BR_APROVEITE           Fala sobre 'Aproveite nossa promocao'
+
+body     BR_KEYWORD_JA          /\b(?:garanta|compre|ligue|adi*quira)\s+.{0,10}\s*(?:j(?:a|б|Б|\&aacute\;)|agora)\b/i
+describe BR_KEYWORD_JA          XXXXX agora/ja
+
+body     BR_CURSO_BODY          /\bcurs[o0]s?\b/i
+describe BR_CURSO_BODY          Curso no body
+
+body     BR_MALADIRETA          /mala.{0,5}direta/i
+describe BR_MALADIRETA          Inclui 'Mala Direta'
+
+body     BR_MALADIRETA2         /mala.{0,5}direta\s+de\s+e\-*mail\'*s*/i
+describe BR_MALADIRETA2         Inclui 'Mala Direta de e-mail'
+
+body     BR_GRATIS              /\bgr(?:a|б|&aacute;)tis\b/i
+describe BR_GRATIS              Inclui a palavra 'Gratis'
+
+body     BR_FRETE_GRATIS        /\bfrete\s+gr(?:a|б|&aacute;)tis\b/i
+describe BR_FRETE_GRATIS        Inclui o texto 'Frete Gratis'
+
+# EB
+# Seguintes elementos sao possiveis na construcao da frase (mais ou menos) nessa ordem:
+# 1) para
+# 2) sair|ser removido|remover seu email
+# 3) de|da
+# 4) nossa lista|cadastro|mailing | futuros contatos|correios
+body     BR_REMOVER_EMAIL       /pa?ra\s+(sair|ser?\s+(descadastra(do|r)|remov(ido|er))|remover\s+(o\s+)?(seu|teu|vosso)\s+(e-|e)?mail)\s+(d(e|a))?\s+(noss(a|o)\s+(lista|cadastro|mailing)|futuros\s+(correios|contatos))/i
+describe BR_REMOVER_EMAIL       Dб instrucoes de como sair da lista
+
+# EB
+# Outra combinacao parecida com BR_REMOVER_EMAIL
+# 1) para
+# 2) remocao|remover|ser descadastrado
+# 3) basta dar reply|responder
+# 4) solicitando remocao
+body     BR_REMOVER_EMAIL_2     /pa?ra\s+(remo(ver|згo|&ccedil;&atilde;o)|ser?\s+(descadastra(do|r)|remov(ido|er)))\s+basta\s+(dar\s+reply|responder)\s+solicitando\s+remo(зг|&ccedil;&atilde;|ca)o/i
+describe BR_REMOVER_EMAIL_2     Dб instrucoes de como sair da lista
+
+# EB
+body     BR_ASSUNTO_REMOVER     /(assunto|titulo|subject)[\W:]+(remo(va|ver|(зг|&ccedil;&atilde;|ca)o)|cancelar?)/i
+describe BR_ASSUNTO_REMOVER     Fala para enviar um email com o assunto: "remover"
+
+# EB
+body     BR_ASSUNTO_REMOVER_2   /(remo(va|ver|(зг|&ccedil;&atilde;|ca)o)|cancelar?)\W+(no\s+(campo\s+)?)?(assunto|titulo|subject)/i
+describe BR_ASSUNTO_REMOVER_2   Fala para enviar um email com o "remover" no subject
+
+# EB
+# Seguintes elementos sao possiveis na construcao da frase (mais ou menos) nessa ordem:
+# 1) caso|se
+# 2) (voce)
+# 3) (se sentiu incomodado com esta|e mensagem|e-mail e)
+# 4) nгo
+# 5) queira|quer|deseja|seja de teu interesse
+# 6) mais receber
+describe BR_INTERESSE           Diz o que fazer se voce nгo quer mais receber mails deles
+body     BR_INTERESSE           /(caso|se)\W+(vo?c.?\W+)?(se\W+sentiu\W+incomodado\W+com\W+(es(t|s)(e|a))\W+((e-|e)?mail|mensagem)\W+e\W+)?n(г|&atilde;|a)o\W+(queira|quer|deseja|seja\W+(mais\W+)?d(o|e)\W+((seu|teu|vosso)\W+interesse|interesse\W+de\W+vossa\W+pessoa))\W+(mais\W+)?receber/i
+
+body     BR_REMOVER_QUOTE       /[\"\'\>\;]+remover*[(?:\&quote\;)\<\"\']+/i
+describe BR_REMOVER_QUOTE       Inclui texto para remover email (quote)
+
+body     BR_TEMPO_LIMITADO      /tempo\s+limitado/i
+describe BR_TEMPO_LIMITADO      Inclui a frase 'Tempo Limitado'
+
+body     BR_CALL_KITNET         /src\=\S+kit\.net/i
+describe BR_CALL_KITNET         Chamando url no kit.net (src=)
+
+body     BR_WWW_SUAEMPRESA      /\.(?:(?:sua\-*){0,1}empresa|voce)\.com/i
+describe BR_WWW_SUAEMPRESA      www.suaempresa.com.br (e similares)
+
+body     BR_RENDA_EXTRA_BODY    /\baument(e|ar|ou|ando)\s+(?:a\s+sua|sua|o\s+seu|o|a){0,1}\s+(?:renda|ganho)|(?:renda|ganho|dinheiro)[\s\-]+extra\b/i
+describe BR_RENDA_EXTRA_BODY    Texto sobre 'Renda Extra'
+
+body     BR_UMA_VEZ             /esta\s+mensagem\s+(?:(?:s(?:o|у|У|\&oacute\;)\s+){0,1}(?:vai\s+ser|ser(?:a|б|Б|\&aacute\;))|est(?:a|б|Б)\ssendo|foi)\s+enviada(?:\sapenas){0,1}\s+uma{0,1}(?:\s+(?:u|ъ|Ъ|\&uacute\;)nica)\s+ve[zs]/i
+describe BR_UMA_VEZ             Dizendo que a msg sera enviada apenas uma vez
+
+body     BR_A_PARTIR_DE         /\ba\s*partir\s+de\s+[a-z]{0,3}\$\s*[\d\.\,]+/i
+describe BR_A_PARTIR_DE         Texto 'A partir de $xx.xx'
+
+body     BR_APENAS              /\bapenas\s+[a-z]{0,3}\$\s*[\d\.\,]+/i
+describe BR_APENAS              Texto 'apenas $xx.xx'
+
+body     BR_ESPECIALMENTE_VC    /\bespecialmente\s+p(?:\/|\.|a{0,1}ra)\s+v(?:c|oc(?:.{1,2}|\&ecirc\;))[\s\.\!]/i
+describe BR_ESPECIALMENTE_VC    Especialmente para voce
+
+body     BR_AGENCIA_DE_XXXX     /\bAg(?:..|e|к|К|\&ecirc\;)ncia\s+de\s+(?:aproxima|modelo)/i
+describe BR_AGENCIA_DE_XXXX     Agencia de Aproximacao/Modelos
+
+body     BR_E_CONFIRA           /\be\s+confira/i
+describe BR_E_CONFIRA           Texto 'e confira'
+
+body     BR_GANHE_ENVIANDO      /ganhe dinheiro.{0,20}enviando e\-*mail/i
+describe BR_GANHE_ENVIANDO      Ganhe dinheiro enviando e-mails
+
+body     BR_INCLUIR_PIRAMIDE    /meu nome.{0,10}inclu.{1,3}do.{0,15}sua lista de correspond.{1,3}ncia/i
+describe BR_INCLUIR_PIRAMIDE    Incluir meu nome na piramide
+
+body     BR_TRABALHE_EM_CASA    /trabalhe (?:a partir )?(?:de|em) casa/i
+describe BR_TRABALHE_EM_CASA    Trabalhe em casa
+
+body     BR_ENVIOU_1REAL        /(?:mand|envi)(?:e|ou|aram|ar.{1,3}o)\s+(?:imediatamente\s*)?r\$\s*1[\,\.]00\b/i
+describe BR_ENVIOU_1REAL        Enviou R$1,00
+
+body     BR_TENHA_SEU_SITE      /tenha seu site na internet/i
+describe BR_TENHA_SEU_SITE      Tenha seu site na Internet
+
+body     BR_SIGILO_ABSOLUTO     /si[gj]ilo\s+absoluto/i
+describe BR_SIGILO_ABSOLUTO     Sigilo Absoluto
+
+body     BR_DUVIDAS_CONJUGAIS   /d.{1,3}vidas\s+conjugais/i
+describe BR_DUVIDAS_CONJUGAIS   Duvidas Conjugais
+
+body     BR_GRAVADOR_TELEFONICO /(?:gravador|grampo)\W+telef.{1,3}n(?:ico|e)/i
+describe BR_GRAVADOR_TELEFONICO Grampo?
+
+body     BR_PERDER_PESO         /(?:precisa|quer)\W+perder\W+(?:peso|[\d\,\.]\s*(?:kg|kilos))/i
+describe BR_PERDER_PESO         Fala sobre perder peso
+
+body     BR_PERDER_PESO_2       /perca\W+(?:peso|[\d\,\.]\s*(?:kg|kilos))/i
+describe BR_PERDER_PESO_2       Fala sobre perder peso
+
+body     BR_DECRETO             /\bDecreto\s+S\.*\s*1618\b/i
+describe BR_DECRETO             Falso Decreto sobre spam
+
+body     BR_CONGRESSO           /Congresso\W+(?:Base\W+){0,1}das\W+Normativas\W+Internacionais\W+sobre\W+(?:o\W+){0,1}SPAM/i
+describe BR_CONGRESSO           Congresso Base das Normativas Int. sobre Spam?
+
+body     BR_NAO_MAIS            /caso\W+n(?:г|Г|a|\&atilde\;)o\W+queira\W+receber\W+esta\W+mensage[mn]/i
+describe BR_NAO_MAIS            Texto sobre nao receber mais a mensagem
+
+body     BR_NAO_MAIS_2          /para\W+deixar\W+de\W+receber\W+estas*\W+mensage[mn]/i
+describe BR_NAO_MAIS_2          Texto sobre nao receber mais a mensagem
+
+body     BR_NAO_MAIS_3          /n(?:г|Г|a|\&atilde\;)o\W+(?:estaremos\W+enviando|enviaremos)\W+estas*\W+mensage[mn]\W+(?:novamente|de\s+novo|uma\s+segunda\s+vez)/i
+describe BR_NAO_MAIS_3          Texto sobre nao receber mais a mensagem
+
+body     BR_RETIRAR_EMAIL       /para\W+(?:retirar|remover)\W+seu\W+e\-*mail/i
+describe BR_RETIRAR_EMAIL       Para retirar seu e-mail da lista
+
+body     BR_NOT_SPAM            /est.\s+\S+\s*(?:\,*\s*segundo\s+a\s+nova\s+legisla.{1,2}(?:a|г|Г|\&atilde\;)o\s*\,*\s+){0,1}n(?:г|Г|a|\&atilde\;)o\s+(?:pode\s+ser|й|Й|e|\&eacute\;)(?:\s+considerad[ao])(?:\s+um){0,1}\s+spam/i
+describe BR_NOT_SPAM            Dizendo que a msg nгo й um spam
+
+# EB
+# Seguintes elementos sao possiveis na construcao da frase (mais ou menos) nessa ordem:
+# 1) nao considere
+# 3) esta|esta|essa|esse|uma
+# 3) mensagem|email
+# 4) (simplesmente) (como) (um)
+# 5) spam
+body     BR_NOT_SPAM_2          /n(г|&atilde;|a)o\s+considere\s+(es(s|t)(e|a)|uma?)\s+(mensagem|(e-|e)?mail)\s+(simplesmente\s+)?(como\s+)?(um\s+)?spam/i
+describe BR_NOT_SPAM_2          Diz para nao considerar a mensagem como spam
+
+# EB
+# Seguintes elementos sao possiveis na construcao da frase (mais ou menos) nessa ordem:
+# 1) esta|essa|uma
+# 2) mensagem|email
+# 3) nao pode(rб) ser
+# 4) considerado|considerada
+# 5) (um) spam
+body     BR_NOT_SPAM_3          /(es(s|t)a|uma?)\s+(mensagem|(e-|e)?mail)\s+n(г|&atilde;|a)o\s+pode\S*\s+ser\s+considerad(o|a)\s+(um\s+)?spam/i
+describe BR_NOT_SPAM_3          Diz para nao considerar a mensagem como spam
+
+### EOF BR

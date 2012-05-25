@@ -1,0 +1,9 @@
+### START non-BR rules: regras genéricas que valem não só em português
+
+rawbody  DL_INTERNET_EMAIL      /\(0022\)http\:\/\/internet\.e\-mail \-+\>/
+describe DL_INTERNET_EMAIL      Saved URL com internet.e-mail
+
+rawbody  DL_HTML_TITLE          /\<\s*title\s*\>\s*(.)\1+[^\<]*(.)\2+\s*\<\/title\>/i
+describe DL_HTML_TITLE          Title suspeito
+
+### EOF non-BR

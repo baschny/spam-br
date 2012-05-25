@@ -1,0 +1,12 @@
+### START BR rules
+
+rawbody  BR_CLIQUE_AQUI         /cli(?:que|[ck]+|[ck]+ar)(?:\W+|(?:\s*\<[^\>]+\>\s*)+)(?:aqui|abaixo)/i
+describe BR_CLIQUE_AQUI         Contem o texto 'Clique aqui'
+
+rawbody  BR_HTML_TITLE_KEYS     /\<\s*title\s*\>.*(?:divulg|melhor|livre\-se|oportunidade|marketing|earn|money|viagra|penis|sexo).*\<\/title\>/i
+describe BR_HTML_TITLE_KEYS     Palavras-chave no title
+
+rawbody  BR_DETETIVE_MOREIRA    /detetivemoreira\@globo\.com/i
+describe BR_DETETIVE_MOREIRA    Detetive Moreira
+
+### EOF BR

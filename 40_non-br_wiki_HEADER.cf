@@ -1,0 +1,35 @@
+### START non-BR rules: regras genéricas que valem não só em português
+
+# No header X-Mailer:
+
+header   DL_KNOWN_MAILER        X-Mailer =~ /phpmailer/i
+describe DL_KNOWN_MAILER        X-Mailer conhecido
+
+# No header From:
+
+header   DL_MALFORMED_FROM_1    From =~ /\s+\>/
+describe DL_MALFORMED_FROM_1    From com formatacao errada
+
+header   DL_MALFORMED_FROM_2    From =~ /\<[^\>]+$/
+describe DL_MALFORMED_FROM_2    From com formatacao errada
+
+header   DL_MALFORMED_FROM_3    From =~ /\<[^\s]+\s[^\>]+\>/
+describe DL_MALFORMED_FROM_3    From com formatacao errada
+
+header   DL_FROM_EXCLAMACAO     From =~ /\!/
+describe DL_FROM_EXCLAMACAO     Contém ponto de exclamacao no From
+
+# No header Subject:
+
+header   DL_QUESTION_SUBJ       Subject =~ /\?/i
+describe DL_QUESTION_SUBJ       Contém interrogacao no subject
+
+header   DL_PESO_KG             Subject =~ /\b[\d\.\,]+\s*(?:kg|kilos|lb)\b/i
+describe DL_PESO_KG             Subject: xx kg
+
+# No header Received:
+
+header   DL_TMPSTR              Received =~ /\=TmpStr\b/i
+describe DL_TMPSTR              Received with 'TmpStr'
+
+### EOF non-BR
